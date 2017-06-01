@@ -11,7 +11,7 @@ Or first_name = 'Maya');
 SELECT
 *
 FROM employees
-WHERE last_name LIKE 'e%';
+WHERE last_name LIKE 'e%e';
 /*Employees hired in the 90s — 135,214 rows.*/
 SELECT
   *
