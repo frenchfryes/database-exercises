@@ -10,7 +10,8 @@ ORDER BY last_name ASC, first_name ASC;
 /*Employees whose last name starts with 'E' — 7,330 rows.*/
 SELECT *
 FROM employees
-WHERE last_name LIKE 'e%e';
+WHERE last_name LIKE '%e%'
+ORDER BY emp_no DESC;
 /*Employees hired in the 90s — 135,214 rows.*/
 SELECT *
 FROM employees
