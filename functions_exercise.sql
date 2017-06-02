@@ -12,18 +12,18 @@ FROM employees
 WHERE last_name LIKE 'e%e'
   OR first_name LIKE 'e%e'
 ORDER BY first_name ASC;
+
 /*Employees hired in the 90s — 135,214 rows.*/
-SELECT *
+SELECT *,datediff(curdate(),hire_date)
 FROM employees
 WHERE hire_date LIKE '199%'
-      AND birth_date LIKE '%12-25'
-ORDER BY hire_date DESC, birth_date DESC;
-#Employees born on Christmas — 842 rows.
-SELECT *
-FROM employees
-WHERE birth_date LIKE '%12-25';
+      AND birth_date LIKE '%12-25';
+
 #Employees with a 'q' in their last name — 1,873 rows.
-SELECT *
+SELECT first_name, last_name,COUNT(*)
 FROM employees
 WHERE last_name LIKE '%q%'
-      AND last_name NOT LIKE '%qu%';
+      AND last_name NOT LIKE '%qu%'
+GROUP BY first_name, last_name
+ORDER BY COUNT(*) DESC;
+
