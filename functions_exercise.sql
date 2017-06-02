@@ -1,11 +1,10 @@
 /*Employees with first names 'Irena', 'Vidya', or 'Maya' — 709 rows (Hint: Use IN)*/
-SELECT *
+SELECT COUNT(*), gender
 FROM employees
-WHERE gender = 'M'
-      AND (first_name = 'Irena'
+WHERE (first_name = 'Irena'
            OR first_name = 'Vidya'
            OR first_name = 'Maya')
-ORDER BY last_name ASC, first_name ASC;
+GROUP BY gender;
 
 /*Employees whose last name starts with 'E' — 7,330 rows.*/
 SELECT *
