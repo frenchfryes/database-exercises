@@ -7,10 +7,11 @@ WHERE (first_name = 'Irena'
 GROUP BY gender;
 
 /*Employees whose last name starts with 'E' — 7,330 rows.*/
-SELECT *
+SELECT CONCAT(first_name, last_name)
 FROM employees
-WHERE last_name LIKE '%e%'
-ORDER BY emp_no DESC;
+WHERE last_name LIKE 'e%e'
+  OR first_name LIKE 'e%e'
+ORDER BY first_name ASC;
 /*Employees hired in the 90s — 135,214 rows.*/
 SELECT *
 FROM employees
